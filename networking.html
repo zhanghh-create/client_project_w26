@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <a href="#main" class="skip">Skip to Main Content</a>
     <header>
- <a href="#main" class="skip">Skip to Main Content</a>
         <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-        <nav>
+        <nav aria-label="Primary">
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "resume.html">Resumes</a></li>
@@ -37,7 +36,7 @@
     </section>
 
     <section>
-        <h3>Ways to Build Your Network</h3>
+        <h2>Ways to Build Your Network</h2>
         <p>
             There are many ways to start networking, even if you are new to the process.
             Focus on building genuine relationships rather than collecting contacts.
@@ -75,7 +74,7 @@
     <h2>Optional Networking Resources</h2>
     <ul>
         <li>
-        <a href="PASTE-YOUR-OPTIONAL-NETWORKING-CANVAS-LINK-HERE" target="_blank" rel="noopener">
+        <a href="https://umich.instructure.com/courses/137916/modules/218605" target="_blank" rel="noopener">
             Other Networking Resources (from CDO Canvas)
         </a>
         </li>
@@ -85,7 +84,10 @@
 
 <footer>
     <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a></p>
+    <p>&copy; <span id="footer-year"></span> Regents of the University of Michigan</p>
 </footer>
-
+<script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

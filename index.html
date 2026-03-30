@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main" class="skip">Skip to Main Content</a>
     <header>
-  <a href="#main" class="skip">Skip to Main Content</a>
         <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-        <nav>
+        <nav aria-label="Primary">
             <ul>
                 <li><a href = "index.html" aria-current="page">Home</a></li>
                 <li><a href = "resume.html">Resumes</a></li>
@@ -24,11 +24,15 @@
     </header>
     <main id="main">
     <section>
-      <h2>Your Central Hub for Career Success at UMSI</h2>
-      <p>
-        Ready to take the next step toward your future career? The UMSI Career Development Resource Hub is your one-stop shop for trusted guidance, practical tools, and the latest information to help you thrive as a student and job-seeker. Whether you are just starting your exploration or getting ready to launch your career, you will find everything you need, organized for you.
-      </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/GSjGeDYJ5Nk?si=qhxJPRTIT___x8hG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="hero-row">
+        <div>
+          <h2>Your Central Hub for Career Success at UMSI</h2>
+          <p>
+            Ready to take the next step toward your future career? The UMSI Career Development Resource Hub is your one-stop shop for trusted guidance, practical tools, and the latest information to help you thrive as a student and job-seeker. Whether you are just starting your exploration or getting ready to launch your career, you will find everything you need, organized for you.
+          </p>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GSjGeDYJ5Nk?si=qhxJPRTIT___x8hG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </section>
 
     <section>
@@ -112,6 +116,10 @@
   </main>
     <footer>
     <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a></p>
+    <p>&copy; <span id="footer-year"></span> Regents of the University of Michigan</p>
 </footer>
+<script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

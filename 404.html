@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | UMSI Career Development Resource Hub</title>
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <a href="#main" class="skip">Skip to Main Content</a>
+
+    <header>
+        <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resumes</a></li>
+                <li><a href="networking.html">Networking &amp; Connections</a></li>
+                <li><a href="job-search.html">Job/Internship Search Plan</a></li>
+            </ul>
+        </nav>
+        <h1>UMSI Career Development Resource Hub</h1>
+    </header>
+
+    <main id="main" class="not-found-main">
+
+        <p class="not-found-code" aria-hidden="true">404</p>
+
+        <h2>Oops — we couldn't find that page.</h2>
+
+        <p>
+            The page you were looking for may have moved, been renamed, or never existed.
+            Don't let a dead link slow down your career search — use the navigation below
+            to get back on track.
+        </p>
+
+        <ul class="not-found-links" aria-label="Helpful links to get back on track">
+            <li><a href="index.html">Go to Home</a></li>
+            <li><a href="resume.html">Resume Resources</a></li>
+            <li><a href="networking.html">Networking &amp; Connections</a></li>
+            <li><a href="job-search.html">Job/Internship Search Plan</a></li>
+            <li>
+                <a href="https://www.si.umich.edu/student-experience/career-development"
+                   target="_blank" rel="noopener">
+                    Visit the CDO Website
+                </a>
+            </li>
+        </ul>
+
+    </main>
+
+    <footer>
+        <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a></p>
+        <p>&copy; <span id="footer-year"></span> Regents of the University of Michigan</p>
+    </footer>
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
