@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <a href="#main" class="skip">Skip to Main Content</a>
     <header>
-  <a href="#main" class="skip">Skip to Main Content</a>
         <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-        <nav>
+        <nav aria-label="Primary">
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "resume.html" aria-current="page">Resumes</a></li>
@@ -85,31 +84,91 @@
   <section>
     <h2>Resume FAQ</h2>
     <img src="images/UMSI_CareerFair_01.jpg" alt="UMSI students chatting on campus" width="600">
-    <ul>
-      <li>
-        <strong>How long should my resume be?</strong><br>
-        For most UMSI students and new grads, one page is best. More experienced professionals may require two pages.
-      </li>
-      <li>
-        <strong>Do I need a different resume for each application?</strong><br>
-        It’s wise to tailor your resume to the requirements and keywords of each opportunity.
-      </li>
-      <li>
-        <strong>Is it okay to include coursework or student projects?</strong><br>
-        Absolutely! UMSI coursework and projects are valued by employers, especially if they show relevant skills and impact.
-      </li>
-      <li>
-        <strong>How often should I update my resume?</strong><br>
-        Update your resume every semester, after major projects, or whenever you gain a new role or responsibility.
-      </li>
-    </ul>
+    <div class="faq-accordion">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+          How long should my resume be?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-1" hidden>
+          <p>For most UMSI students and new grads, one page is best. More experienced professionals may require two pages.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+          Do I need a different resume for each application?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-2" hidden>
+          <p>It’s wise to tailor your resume to the requirements and keywords of each opportunity.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+          Is it okay to include coursework or student projects?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-3" hidden>
+          <p>Absolutely! UMSI coursework and projects are valued by employers, especially if they show relevant skills and impact.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+          How often should I update my resume?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-4" hidden>
+          <p>Update your resume every semester, after major projects, or whenever you gain a new role or responsibility.</p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
     </main>
   <footer>
     <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a></p>
+    <p>&copy; <span id="footer-year"></span> Regents of the University of Michigan</p>
 </footer>
+<script>
+    // Dynamic footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            var answerId = this.getAttribute('aria-controls');
+            var answer = document.getElementById(answerId);
+            var icon = this.querySelector('.faq-icon');
+
+            // Close all other open items
+            document.querySelectorAll('.faq-question').forEach(function(other) {
+                if (other !== btn) {
+                    other.setAttribute('aria-expanded', 'false');
+                    other.querySelector('.faq-icon').textContent = '+';
+                    var otherId = other.getAttribute('aria-controls');
+                    document.getElementById(otherId).hidden = true;
+                }
+            });
+
+            // Toggle this item
+            if (expanded) {
+                this.setAttribute('aria-expanded', 'false');
+                icon.textContent = '+';
+                answer.hidden = true;
+            } else {
+                this.setAttribute('aria-expanded', 'true');
+                icon.textContent = '−';
+                answer.hidden = false;
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
